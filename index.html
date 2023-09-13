@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Vue App</title>
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <script type="importmap">
+        {
+            "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+            }
+        }
+    </script>
+
+<div id="app">
+    <p>Total Likes: {{ total }}</p>
+    <like-component message="Like" v-on:increment="incrementTotal"></like-component>
+    <like-component message="Awesome" v-on:increment="incrementTotal"></like-component>
+    <like-component message="Great" v-on:increment="incrementTotal"></like-component>
+    <like-component v-on:increment="incrementTotal"></like-component>
+</div>
+
+
+<script type="module">
+  import { createApp } from 'vue'
+  import main from './js/main.js'
+
+  createApp(main).mount('#app')
+</script>
+</body>
+</html>
+
+  
